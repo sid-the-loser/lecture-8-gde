@@ -17,3 +17,11 @@ The health bar will be listening for the signal from `Car` class to see the fuel
 ## Event patters
 
 The car stops once the fuel is empty.
+
+# Evaluation
+
+
+
+# Credits
+
+Used an asset pack from Kenney, all licence and stuff can be found in the source code.
