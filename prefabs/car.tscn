@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://2poafdn87v0m"]
+[gd_scene load_steps=4 format=3 uid="uid://2poafdn87v0m"]
 
 [ext_resource type="Script" uid="uid://c6eeauic77ist" path="res://scripts/car.gd" id="1_5tv3e"]
+[ext_resource type="Texture2D" uid="uid://cxcfb2k3h2e5d" path="res://kenney_racing-pack/PNG/Cars/car_black_1.png" id="2_jqes7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tv3e"]
+size = Vector2(64, 128)
 
 [node name="Car" type="CharacterBody2D"]
 script = ExtResource("1_5tv3e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jqes7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5tv3e")
