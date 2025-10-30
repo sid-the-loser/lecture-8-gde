@@ -38,14 +38,14 @@ position = Vector2(578.00006, 536)
 [node name="Camera2D" type="Camera2D" parent="Cars/Player"]
 position = Vector2(0, -215)
 
-[node name="FuelTrack" type="Label" parent="Cars/Player"]
+[node name="FuelTrack" type="Label" parent="Cars/Player/Camera2D"]
 offset_left = -578.00006
-offset_top = -536.0
+offset_top = -321.0
 offset_right = -394.00006
-offset_bottom = -437.0
+offset_bottom = -222.0
 theme_override_font_sizes/font_size = 72
 text = "Fuel: "
 script = ExtResource("3_sugp2")
 
 [connection signal="fuel_updated" from="Cars/Player" to="." method="_on_player_fuel_updated"]
-[connection signal="fuel_updated" from="Cars/Player" to="Cars/Player/FuelTrack" method="_on_player_fuel_updated"]
+[connection signal="fuel_updated" from="Cars/Player" to="Cars/Player/Camera2D/FuelTrack" method="_on_player_fuel_updated"]
