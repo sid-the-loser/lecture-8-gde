@@ -1,35 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6u1e3qp2mvus"]
+[gd_scene load_steps=5 format=3 uid="uid://b6u1e3qp2mvus"]
 
 [ext_resource type="Texture2D" uid="uid://bfdqfq5qoicct" path="res://kenney_racing-pack/PNG/Tiles/Asphalt road/road_asphalt01.png" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://caltrvrybvoj5" path="res://scenes/main_scene.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://2poafdn87v0m" path="res://prefabs/car.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://cnyltu6hvimhe" path="res://scripts/fuel_track.gd" id="3_sugp2"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_jyhfs")
 
 [node name="World" type="Node" parent="."]
 
 [node name="RoadAsphalt01" type="Sprite2D" parent="World"]
-position = Vector2(-1.9999847, -222.5)
+position = Vector2(576, 313.49997)
 scale = Vector2(5, 5)
 texture = ExtResource("1_0wfyh")
 
 [node name="RoadAsphalt02" type="Sprite2D" parent="World"]
-position = Vector2(-2.3841858e-07, -864)
+position = Vector2(578, -328.00003)
 scale = Vector2(5, 5)
 texture = ExtResource("1_0wfyh")
 
 [node name="RoadAsphalt03" type="Sprite2D" parent="World"]
-position = Vector2(-1.4210855e-14, -1504)
+position = Vector2(578, -968)
 scale = Vector2(5, 5)
 texture = ExtResource("1_0wfyh")
 
 [node name="RoadAsphalt04" type="Sprite2D" parent="World"]
-position = Vector2(-8.4703295e-22, -2144)
+position = Vector2(578, -1608)
 scale = Vector2(5, 5)
 texture = ExtResource("1_0wfyh")
 
 [node name="Cars" type="Node" parent="."]
 
-[node name="Car" parent="Cars" instance=ExtResource("1_o5qli")]
+[node name="Player" parent="Cars" instance=ExtResource("1_o5qli")]
+position = Vector2(578.00006, 536)
 
-[node name="Camera2D" type="Camera2D" parent="Cars/Car"]
+[node name="Camera2D" type="Camera2D" parent="Cars/Player"]
 position = Vector2(0, -215)
+
+[node name="FuelTrack" type="Label" parent="Cars/Player"]
+offset_left = -578.00006
+offset_top = -536.0
+offset_right = -394.00006
+offset_bottom = -437.0
+theme_override_font_sizes/font_size = 72
+text = "Fuel: "
+script = ExtResource("3_sugp2")
+
+[connection signal="fuel_updated" from="Cars/Player" to="." method="_on_player_fuel_updated"]
+[connection signal="fuel_updated" from="Cars/Player" to="Cars/Player/FuelTrack" method="_on_player_fuel_updated"]

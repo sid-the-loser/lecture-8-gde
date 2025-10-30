@@ -12,4 +12,8 @@ A game where the player drives in the top down mode. This includes fuel meter, s
 
 ## Observer patterns
 
+The health bar will be listening for the signal from `Car` class to see the fuel.
+
 ## Event patters
+
+The car stops once the fuel is empty.
