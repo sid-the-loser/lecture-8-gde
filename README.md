@@ -1,5 +1,7 @@
 # Lecture 8 | GDE
 
+> NOTE: The reflection had to be updated last minute. Sorry.
+
 > Name: Sidharth Suresh
 
 > This project was built using Godot since Unity was giving me a hard time. That doesn't mean there isn't a build. I used `Godot 4.5.1`
@@ -20,7 +22,9 @@ The car stops once the fuel is empty.
 
 # Evaluation
 
-
+Could've done a better job with planning up ahead. Showed up at class late, need to be on time.
+Forgot to add state patterns. Observer pattern used in engine commands. I learnt `signals` in godot on the go.
+https://docs.godotengine.org/en/stable/classes/class_signal.html
 
 # Credits
 
