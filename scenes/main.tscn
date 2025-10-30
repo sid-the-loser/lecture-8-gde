@@ -5,7 +5,7 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="World" type="Node2D" parent="."]
+[node name="World" type="Node" parent="."]
 
 [node name="RoadAsphalt01" type="Sprite2D" parent="World"]
 position = Vector2(-1.9999847, -222.5)
@@ -27,7 +27,9 @@ position = Vector2(-8.4703295e-22, -2144)
 scale = Vector2(5, 5)
 texture = ExtResource("1_0wfyh")
 
-[node name="Car" parent="." instance=ExtResource("1_o5qli")]
+[node name="Cars" type="Node" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="Car"]
+[node name="Car" parent="Cars" instance=ExtResource("1_o5qli")]
+
+[node name="Camera2D" type="Camera2D" parent="Cars/Car"]
 position = Vector2(0, -215)

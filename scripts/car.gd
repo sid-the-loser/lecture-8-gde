@@ -7,9 +7,16 @@ extends CharacterBody2D
 
 var mov_direction: Vector2 = Vector2.ZERO
 
+var auto_pilot_direction: Vector2 = Vector2(0, -1)
+
 func _process(delta: float) -> void:
 	if player_controlled:
 		pass
+		
+	else:
+		mov_direction = auto_pilot_direction * max_speed
 
 func _physics_process(delta: float) -> void:
-	pass
+	velocity = velocity.lerp(mov_direction, acceleration * delta)
+	
+	move_and_slide()
